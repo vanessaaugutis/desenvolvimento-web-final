@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Materia de programaçao web",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessaaugutis/desenvolvimentoWeb.git"
+  },
+  "author": "Vanessa Augutis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessaaugutis/desenvolvimentoWeb/issues"
+  },
+  "homepage": "https://github.com/vanessaaugutis/desenvolvimentoWeb#readme"
+}
