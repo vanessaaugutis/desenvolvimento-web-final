@@ -4,3 +4,90 @@
     padding: 0;
     margin: 0;
 } 
+
+body {
+    overflow-x: hidden;
+    font-family: "Ginto Nord","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+/*  Estilos do conteúdo */
+
+#content {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    margin-top: 10vh;
+    background-color: #404eed;
+    overflow-x: hidden;
+}
+
+#content .image-one {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: none;
+    margin-left: -1030px;
+}
+
+#content .area-texts {
+    margin: 0 auto;
+    width: 625px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+#content .area-texts h1 {
+    font-size: 62px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#content .area-texts p {
+    margin-top: 40px;
+    font-size: clamp(16px,2vw,20px);
+    line-height: 1.625;
+}
+
+#content .area-texts .area-buttons {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content .area-texts .area-buttons button {
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+}
+
+
+#content .area-texts .area-buttons button.button-download {
+    background: #fff;
+    display: flex;
+}
+
+#content .area-texts .area-buttons button.button-download span {
+    margin-left: 5px;;
+}
+
+#content .area-texts .area-buttons button.button-open-discord {
+    background-color: #23272a;
+    color: #fff;
+}
+
+#content .image-two {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: 370px;
+}
