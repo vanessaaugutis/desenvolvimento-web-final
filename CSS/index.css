@@ -1,9 +1,4 @@
 /* Estilos globais */
-
-.classe{
-    display:flex;
-    NITRO
-}
 * {
     padding: 0;
     margin: 0;
@@ -13,6 +8,32 @@ body {
     overflow-x: hidden;
     font-family: "Ginto Nord","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+.classe{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.larg{
+    padding: 0px 40px;
+    background-color: #5865f2;
+    height: 80px;
+}
+.menu{
+    display: flex;
+}
+.itemenu{
+    margin-left: 10px;
+    color:#fff;
+}
+.corent{
+    color:white;
+}
+.cb{
+    color:white;
+}
+
 
 /*  Estilos do conteúdo */
 
