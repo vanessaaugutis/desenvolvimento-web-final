@@ -3,14 +3,17 @@
     padding: 0;
     margin: 0;
 } 
-.neg{
-    font-weight: bold
-    }
 
 body {
     overflow-x: hidden;
     font-family: "Ginto Nord","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+
+/* Estilos do cabeçalho */
+.neg{
+    font-weight: bold
+    }
+
 .classe{
     display: flex; 
     align-items: center;
@@ -140,6 +143,11 @@ a {
     display: flex;
 }
 
+#content .area-texts .area-buttons button.button-download:hover {
+    color: #404eed;
+    transition: 0.3s;
+}
+
 #content .area-texts .area-buttons button.button-download span {
     margin-left: 5px;;
 }
@@ -147,6 +155,11 @@ a {
 #content .area-texts .area-buttons button.button-open-discord {
     background-color: #23272a;
     color: #fff;
+}
+
+#content .area-texts .area-buttons button.button-open-discord:hover {
+    background-color: #36393f;
+    transition: 0.3s;
 }
 
 #content .image-two {
