@@ -23,7 +23,7 @@ body {
 
 .larg{
     padding: 0px 40px;
-    background-color: #5865f2;
+    background-color: #404eed;
     height: 80px;
 }
 .menu{
@@ -83,7 +83,6 @@ a {
     display: flex;
     width: 100vw;
     height: 90vh;
-    margin-top: 10vh;
     background-color: #404eed;
     overflow-x: hidden;
 }
