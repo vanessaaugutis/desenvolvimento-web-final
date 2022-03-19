@@ -181,3 +181,10 @@ a {
     left: 50%;
     margin-left: 370px;
 }
+
+
+@media (max-width: 1000px) {
+    #content .image-two, #content .image-one, .menu {
+       display: none;
+    }
+}
