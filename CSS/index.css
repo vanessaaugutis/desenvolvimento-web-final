@@ -3,14 +3,17 @@
     padding: 0;
     margin: 0;
 } 
-.neg{
-    font-weight: bold
-    }
 
 body {
     overflow-x: hidden;
     font-family: "Ginto Nord","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+
+/* Estilos do cabeçalho */
+.neg{
+    font-weight: bold
+    }
+
 .classe{
     display: flex; 
     align-items: center;
@@ -22,7 +25,7 @@ body {
 }
 .larg{
     padding: 0px 40px;
-    background-color: #5865f2;
+    background-color: #404eed;
     height: 80px;
 }
 .menu{
@@ -82,7 +85,6 @@ a {
     display: flex;
     width: 100vw;
     height: 90vh;
-    margin-top: 10vh;
     background-color: #404eed;
     overflow-x: hidden;
 }
@@ -142,6 +144,11 @@ a {
     display: flex;
 }
 
+#content .area-texts .area-buttons button.button-download:hover {
+    color: #404eed;
+    transition: 0.3s;
+}
+
 #content .area-texts .area-buttons button.button-download span {
     margin-left: 5px;;
 }
@@ -149,6 +156,11 @@ a {
 #content .area-texts .area-buttons button.button-open-discord {
     background-color: #23272a;
     color: #fff;
+}
+
+#content .area-texts .area-buttons button.button-open-discord:hover {
+    background-color: #36393f;
+    transition: 0.3s;
 }
 
 #content .image-two {
