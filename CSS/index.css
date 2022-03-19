@@ -20,7 +20,9 @@ body {
     justify-content: space-between;
 
 }
-
+.letra:hover{
+    text-decoration: underline;
+}
 .larg{
     padding: 0px 40px;
     background-color: #404eed;
@@ -59,7 +61,7 @@ element.style {
     padding: 7px 16px;
 }
 .buttonWhite-1M-wED {
-    background-color: var(--white);
+    background-color: white;
     color: var(--not-quite-black);
 }
 .button-ZGMevK {
