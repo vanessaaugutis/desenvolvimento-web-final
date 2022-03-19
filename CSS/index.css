@@ -24,7 +24,7 @@ body {
 .larg{
     padding: 0px 40px;
     background-color: #404eed;
-    height: 80px;
+    height: 67px;
 }
 .menu{
     display: flex;
@@ -76,6 +76,10 @@ element.style {
 }
 a {
     text-decoration: none;
+}
+
+.menu .itemenu .but1:hover {
+    text-decoration: underline;
 }
 /*  Estilos do conteúdo */
 
