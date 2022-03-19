@@ -20,50 +20,57 @@ body {
     justify-content: space-between;
 
 }
-.letra:hover{
-    text-decoration: underline;
-}
+
 .larg{
     padding: 0px 40px;
     background-color: #404eed;
     height: 67px;
 }
+
 .menu{
     display: flex;
 }
+
 .itemenu{
     margin-left: 10px;
     color:#fff;
 }
+
 .esp{
     padding: 20px ;
 }
+
 .corent{
     color:white;
 }
+
 .cb{
     color:white;
 }
+
 .but1{
     color:white;
 }
-element.style {
-}
+
 .mobileAppButton-J8RITc {
     margin-right: 16px;
 }
+
 .button-1I7cbj {
     white-space: nowrap;
 }
+
 .buttonSmall-1FIG7u {
     border-radius: 40px;
     font-size: 14px;
     padding: 7px 16px;
 }
+
 .buttonWhite-1M-wED {
     background-color: white;
     color: var(--not-quite-black);
 }
+
 .button-ZGMevK {
     line-height: 24px;
     cursor: pointer;
@@ -76,6 +83,7 @@ element.style {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 }
+
 a {
     text-decoration: none;
 }
@@ -83,6 +91,7 @@ a {
 .menu .itemenu .but1:hover {
     text-decoration: underline;
 }
+
 /*  Estilos do conteúdo */
 
 #content {
@@ -141,7 +150,6 @@ a {
     border: none;
     cursor: pointer;
 }
-
 
 #content .area-texts .area-buttons button.button-download {
     background: #fff;
