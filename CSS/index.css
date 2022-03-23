@@ -12,19 +12,17 @@ body {
 /* Estilos do cabeçalho */
 .neg{
     font-weight: bold
-    }
+}
 
 .classe{
     display: flex; 
     align-items: center;
     justify-content: space-between;
-
 }
 
 .larg{
     padding: 0px 40px;
     background-color: #404eed;
-    height: 67px;
 }
 
 .menu{
@@ -92,14 +90,19 @@ a {
     text-decoration: underline;
 }
 
+.icon-burguer{
+    display: none !important;
+}
+
 /*  Estilos do conteúdo */
 
 #content {
     display: flex;
     width: 100vw;
-    height: 90vh;
+    height: 91.3vh;
     background-color: #404eed;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #content .image-one {
@@ -184,7 +187,89 @@ a {
 
 
 @media (max-width: 1000px) {
+    .classe {
+        width: 97vw;
+    }
+    .cb svg {
+        width: 300px;
+        height: 100px;
+    }
+
+    .icon-burguer svg {
+        width: 100px;
+        height: 70px;
+    }
+
+    .button-ZGMevK {
+        padding: 30px 50px;
+        font-size: 25px;
+    }
+
+    #content {
+        height: 100vh;
+        padding-left: 50px;
+    }
+
+    .space-header-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-burguer {
+        display: block !important;
+        cursor: pointer;
+    }
+
     #content .image-two, #content .image-one, .menu {
        display: none;
+    }
+
+    #content .area-texts .area-buttons {
+        flex-direction: column;
+    }
+
+    #content .area-texts .area-buttons button.button-open-discord {
+        margin-top: 40px;
+        width: 90%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    #content .area-texts .area-buttons button {
+        padding: 30px 50px;
+    }
+
+    #content .area-texts .area-buttons button.button-download {
+        width: 80%;
+        font-size: 40px; 
+    }
+
+    #content .area-texts .area-buttons button.button-download svg{
+        width: 60px;
+        height: 40px;
+    }
+
+    #content .area-texts {
+        text-align: left;
+        align-items: flex-start;
+        margin-left: 25px;
+    }
+
+    #content .area-texts {
+        width: 100%;
+    }
+
+    #content .area-texts h1 {
+        font-size: 75px;
+    }
+
+    #content .area-texts p {
+        font-size: 36px;
+        margin-left: 5px;
+    }
+
+    #content .area-texts .area-buttons button {
+        border-radius: 40px;
     }
 }
