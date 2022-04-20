@@ -4,3 +4,4 @@ buttonClick= function () {
     //Fazer autenticação
     window.location.href = "index.html"
 }
+
