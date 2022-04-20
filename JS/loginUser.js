@@ -1,1 +1,4 @@
-let buttonLogin = document.getElementsByClassName("button-login");
+openLogin = function() {
+    let login = document.getElementById('telaLogin');
+}
+
