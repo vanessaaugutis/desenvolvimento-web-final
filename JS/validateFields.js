@@ -1,7 +1,8 @@
-let buttonLogin = document.getElementsByClassName("button-login");
+buttonClick = function () {
+    let login = document.getElementById('telaLogin');
+    let busca = document.getElementById('telaBusca');
 
-buttonClick= function () {
-    //Fazer autenticação
-    window.location.href = "index.html"
+    login.style.display = 'none';
+    busca.style.display = 'block';
 }
 

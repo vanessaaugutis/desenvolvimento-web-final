@@ -273,3 +273,69 @@ a {
         border-radius: 40px;
     }
 }
+
+#telaLogin {
+    display: none;
+}
+
+#telaLogin {
+    width: 100vw;
+    height: 100vh;
+    background-color: #404eed;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#telaLogin .content-login {
+    border: 1px solid #FFF;
+    border-radius: 8px;
+    padding: 40px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#telaLogin .title-login {
+    margin-bottom: 15px;
+}
+
+#telaLogin .field-form-login {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#telaLogin .field-form-login input {
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    margin-top: 5px;
+}
+
+#telaLogin .button-login {
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #FFF;
+    border-radius: 12px;
+    color: #404eed;
+    margin-top: 40px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+#telaLogin .button-login:hover {
+    text-decoration: underline;
+}
+
+#telaBusca {
+    display: none;
+}
+
+#telaBusca p {
+    color: #0000;
+}
