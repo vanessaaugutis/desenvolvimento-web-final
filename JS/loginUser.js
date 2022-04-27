@@ -34,9 +34,10 @@ buttonClick = function () {
     let userValid = false;
 
     xmlhttp.onreadystatechange = function () {
-        if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-            alert("E-mail ou senha incorretos");
-        } else if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+        // if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
+        //     alert("E-mail ou senha incorretos");
+        // } else 
+        if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
             let retorno = JSON.parse(xmlhttp.responseText);
             meuStorage.setItem('token', retorno.token);
              
