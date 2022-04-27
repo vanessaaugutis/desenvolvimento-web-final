@@ -1,19 +1,19 @@
+let meuStorage = localStorage;
+let token = meuStorage.getItem('token');
+
+//VERIFICA SE TEM TOKEN PARA MANTER O USUÁRIO LOGADO
+// if (token) {
+//     let login = document.getElementById('telaLogin');
+//     let discord = document.getElementById('telaDiscord');
+//     let busca = document.getElementById('telaBusca');
+
+//     login.style.display = 'none';
+//     discord.style.display = 'none';
+//     busca.style.display = 'block';
+// }
+
 //cria o método de http para conectar com api
 let xmlhttp = new XMLHttpRequest();
-
-//Abre a api desejada
-xmlhttp.open(
-	'GET', 'https://reqres.in/api/users', true
-);
-
-xmlhttp.onreadystatechange = function () {
-    if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-        let retorno = JSON.parse(xmlhttp.responseText);
-        console.log(retorno.data);
-    }
-};
-
-xmlhttp.send();
 
 openLogin = function() {
     let login = document.getElementById('telaLogin');
@@ -37,6 +37,9 @@ buttonClick = function () {
         if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
             alert("E-mail ou senha incorretos");
         } else if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+            let retorno = JSON.parse(xmlhttp.responseText);
+            meuStorage.setItem('token', retorno.token);
+             
             userValid = true;
             let login = document.getElementById('telaLogin');
             let busca = document.getElementById('telaBusca');
