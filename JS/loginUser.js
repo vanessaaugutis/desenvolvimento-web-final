@@ -23,36 +23,36 @@ openLogin = function() {
     discord.style.display = 'none';
 }
 
-buttonClick = function () {
+// buttonClick = function () {
 
-    xmlhttp.open(
-        'POST', 'https://reqres.in/api/login', true
-    );
+//     xmlhttp.open(
+//         'POST', 'https://reqres.in/api/login', true
+//     );
 
-    let email = document.getElementById("emailUser");
-    let password = document.getElementById("passwordUser");
-    let userValid = false;
+//     let email = document.getElementById("emailUser");
+//     let password = document.getElementById("passwordUser");
+//     let userValid = false;
 
-    xmlhttp.onreadystatechange = function () {
-        // if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-        //     alert("E-mail ou senha incorretos");
-        // } else 
-        if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-            let retorno = JSON.parse(xmlhttp.responseText);
-            meuStorage.setItem('token', retorno.token);
+//     xmlhttp.onreadystatechange = function () {
+//         // if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
+//         //     alert("E-mail ou senha incorretos");
+//         // } else 
+//         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+//             let retorno = JSON.parse(xmlhttp.responseText);
+//             meuStorage.setItem('token', retorno.token);
              
-            userValid = true;
-            let login = document.getElementById('telaLogin');
-            let busca = document.getElementById('telaBusca');
+//             userValid = true;
+//             let login = document.getElementById('telaLogin');
+//             let busca = document.getElementById('telaBusca');
         
-            if (userValid) {
-                login.style.display = 'none';
-                busca.style.display = 'block';
-            }
-        }
-    };
+//             if (userValid) {
+//                 login.style.display = 'none';
+//                 busca.style.display = 'block';
+//             }
+//         }
+//     };
 
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.send(JSON.stringify({ "email": email.value, "password": password.value }));
-}
+//     xmlhttp.setRequestHeader("Content-Type", "application/json");
+//     xmlhttp.send(JSON.stringify({ "email": email.value, "password": password.value }));
+// }
 
