@@ -334,8 +334,23 @@ a {
 
 #telaBusca {
     display: none;
+    background-image: url("https://estnn.com/wp-content/uploads/2020/03/age-of-empires-2-screenshot.jpg");
+    align-items: flex-start;
+    padding-top: 50px;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+}
+
+#telaBusca h1 {
+    background-color: #FFF;
+} 
+
+#telaBusca input {
+    width: 300px;
 }
 
 #telaBusca p {
     color: #0000;
 }
+
