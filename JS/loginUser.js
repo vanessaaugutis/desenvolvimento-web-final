@@ -8,13 +8,14 @@ openLogin = function() {
     let login = document.getElementById('telaLogin');
     let discord = document.getElementById('telaDiscord');
 
-    login.style.display = 'flex';
+    login.style.display = 'block';
     discord.style.display = 'none';
+    getListUnits();
 }
 
 getListUnits = function () {
     xmlhttp.open(
-        'GET', 'https://age-of-empires-2-api.herokuapp.com/api/v1/units', true
+        'GET', 'https://www.cheapshark.com/api/1.0/stores', true
     );
 
     xmlhttp.onreadystatechange = function () {
@@ -23,13 +24,25 @@ getListUnits = function () {
         } else 
         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
             let retorno = JSON.parse(xmlhttp.responseText);
-            //units = retorno.units;
-
+            let telaList = document.getElementById('list-units');
+            retorno.forEach(element => {
+                telaList.appendChild(createMenuItem(element.storeID, element.storeName));
+            });
         }
     };
 
     xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.setRequestHeader("Access-Control-Allow-Origin",  "*");
     xmlhttp.send();
+}
+
+function createMenuItem(id, name) {
+    let li = document.createElement('li');
+    let span = document.createElement('span');
+    span.textContent = name;
+    li.textContent = id + '- ';
+    li.appendChild(span);
+    return li;
 }
 
 //VERIFICA SE TEM TOKEN PARA MANTER O USUÁRIO LOGADO
@@ -40,7 +53,7 @@ if (token) {
 
     login.style.display = 'none';
     discord.style.display = 'none';
-    busca.style.display = 'flex';
+    busca.style.display = 'block';
 
     getListUnits();
 }
