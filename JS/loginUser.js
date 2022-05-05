@@ -15,19 +15,24 @@ openLogin = function() {
 
 getListUnits = function () {
     xmlhttp.open(
-        'GET', 'https://www.cheapshark.com/api/1.0/stores', true
+        'GET', 'https://www.cheapshark.com/api/1.0/games?ids=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', true
     );
 
     xmlhttp.onreadystatechange = function () {
         if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-            alert("Erro ao carregar Units");
+            alert("Erro ao carregar");
         } else 
         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
             let retorno = JSON.parse(xmlhttp.responseText);
+
             let telaList = document.getElementById('list-units');
-            retorno.forEach(element => {
-                telaList.appendChild(createMenuItem(element.storeID, element.storeName));
-            });
+            
+            for(let i=0; i <= 19; i++) {
+                if(retorno[i]?.info) {
+                    telaList.appendChild(createMenuItem(i, retorno[i].info.title));
+                }
+                
+            }
         }
     };
 

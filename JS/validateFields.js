@@ -19,3 +19,9 @@ buttonClick = function () {
     validateLogin();
 }
 
+searchItem = function () {
+    let inputSearch = document.getElementById('search-text');
+    let text = inputSearch.value;
+    console.log(text);
+}
+
