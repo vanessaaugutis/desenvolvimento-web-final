@@ -1,55 +1,81 @@
-buttonClick = function () {
-    let inputEmail = document.getElementById('emailUser');
-    let inputPassword = document.getElementById('passwordUser');
-    if (!inputEmail.value || !inputPassword.value) {
-        inputEmail.style.border = '2px solid red';
-        inputPassword.style.border = '2px solid red';
-        alert("Preencha o e-mail e senha.");
-        return;
-    }
-    if (inputEmail.value.length < 3 || inputPassword.value.length < 3) {
-        inputEmail.style.border = '2px solid red';
-        inputPassword.style.border = '2px solid red';
-        alert("E-mail e senha não devem possuir menos que 3 caracteres");
-        return;
-    }
+let meuStorage = localStorage;
+let token = meuStorage.getItem('token');
+let units = []
+//cria o método de http para conectar com api
+let xmlhttp = new XMLHttpRequest();
 
-    inputEmail.style.border = 'none';
-    inputPassword.style.border = 'none';
-    validateLogin();
+openLogin = function () {
+    let login = document.getElementById('tselaLogin');
+    let discord = document.getElementById('telaDiscord');
+
+    login.style.display = 'flex';
+    discord.style.display = 'none';
 }
 
-searchItem = function () {
-    let inputSearch = document.getElementById('search-text');
-    let url = 'https://www.cheapshark.com/api/1.0/games?id=' + inputSearch.value;
-
+getListUnits = function () {
     xmlhttp.open(
-        'GET', url, true
+        'GET', 'https://age-of-empires-2-api.herokuapp.com/api/v1/units', true
     );
 
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-            alert("Erro ao buscar");
+            alert("Erro ao carregar Units");
         } else
             if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
                 let retorno = JSON.parse(xmlhttp.responseText);
-                if (!retorno.info) {
-                    alert("ID INVÁLIDO");
-                    getListUnits();
-                } else {
-                    let telaList = document.getElementById('list-units');
-                    while (telaList.firstChild) {
-                        telaList.removeChild(telaList.firstChild);
-                    }
+                //units = retorno.units;
 
-                    telaList.appendChild(createMenuItem(inputSearch.value, retorno.info.title));
+            }
+    };
+
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send();
+}
+
+//VERIFICA SE TEM TOKEN PARA MANTER O USUÁRIO LOGADO
+if (token) {
+    let login = document.getElementById('telaLogin');
+    let discord = document.getElementById('telaDiscord');
+    let busca = document.getElementById('telaBusca');
+
+    login.style.display = 'none';
+    discord.style.display = 'none';
+    busca.style.display = 'flex';
+
+    getListUnits();
+}
+
+validateLogin = function () {
+
+    xmlhttp.open(
+        'POST', 'https://reqres.in/api/login', true
+    );
+
+    let email = document.getElementById("emailUser");
+    let password = document.getElementById("passwordUser");
+    let userValid = false;
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
+            alert("E-mail ou senha incorretos");
+        } else
+            if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
+                let retorno = JSON.parse(xmlhttp.responseText);
+                meuStorage.setItem('token', retorno.token);
+
+                userValid = true;
+                let login = document.getElementById('telaLogin');
+                let busca = document.getElementById('telaBusca');
+
+                if (userValid) {
+                    login.style.display = 'none';
+                    busca.style.display = 'flex';
                 }
             }
     };
 
     xmlhttp.setRequestHeader("Content-Type", "application/json");
-    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xmlhttp.send();
+    xmlhttp.send(JSON.stringify({ "email": email.value, "password": password.value }));
 }
 
 

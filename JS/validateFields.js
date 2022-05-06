@@ -52,4 +52,3 @@ searchItem = function () {
     xmlhttp.send();
 }
 
-

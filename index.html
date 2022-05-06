@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
 <html>
 
@@ -126,11 +126,14 @@
   </div>
 
   <div id="telaBusca">
-    <h1>BUSQUE PELO SEU UNIT NO JOGO:</h1>
     <div class="search-units">
-      <input style="padding: 5px;" type="text" id="search-text" />
-      <button style="cursor: pointer; padding: 5px;">Buscar</button>
+      <h1>BUSQUE PELO SEU CHEAPSHARK PELO ID:</h1>
+      <div>
+        <input style="padding: 5px;" type="text" id="search-text" />
+        <button style="cursor: pointer; padding: 5px;" onclick="searchItem()">Buscar</button>
+      </div>
     </div>
+    <div id="list-units"></div>
   </div>
 
   <script src="./JS/validateFields.js"></script>
