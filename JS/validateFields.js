@@ -22,7 +22,6 @@ buttonClick = function () {
 searchItem = function () {
     let inputSearch = document.getElementById('search-text');
     let url = 'https://www.cheapshark.com/api/1.0/games?id=' + inputSearch.value;
-
     xmlhttp.open(
         'GET', url, true
     );

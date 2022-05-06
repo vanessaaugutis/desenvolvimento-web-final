@@ -345,9 +345,6 @@ a {
     height: 100vh;
 }
 
-<<<<<<< HEAD
-
-=======
 .search-units {
     align-items: flex-start;
     justify-content: space-around;
@@ -371,7 +368,6 @@ a {
 #telaBusca h1 {
     padding-left: 40px;
 } 
->>>>>>> 5e43f3ffe57917c81962b67c05a0c67a40dd63d8
 
 #telaBusca input {
     width: 300px;
