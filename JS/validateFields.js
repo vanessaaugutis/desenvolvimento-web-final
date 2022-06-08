@@ -19,6 +19,18 @@ buttonClick = function () {
     validateLogin();
 }
 
+goToCadastro = function () {
+    let login = document.getElementById('telaLogin');
+    let discord = document.getElementById('telaDiscord');
+    let busca = document.getElementById('telaBusca');
+    let cadastro = document.getElementById('telaCadastro');
+
+    login.style.display = 'none';
+    discord.style.display = 'none';
+    busca.style.display = 'none';
+    cadastro.style.display = 'block';
+}
+
 searchItem = function () {
     let inputSearch = document.getElementById('search-text');
     let url = 'https://www.cheapshark.com/api/1.0/games?id=' + inputSearch.value;

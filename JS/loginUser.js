@@ -56,9 +56,9 @@ newPublicUser = function() {
     let discord = document.getElementById('telaDiscord');
     let busca = document.getElementById('telaBusca');
 
-    login.style.display = 'none';
+    login.style.display = 'block';
     discord.style.display = 'none';
-    busca.style.display = 'block';
+    busca.style.display = 'none';
 
 //}
 
