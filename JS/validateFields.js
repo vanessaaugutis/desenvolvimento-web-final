@@ -19,6 +19,13 @@ buttonClick = function () {
     validateLogin();
 }
 
+pegarDados = function () {
+    let Nome = document.getElementById('nome');
+    let Senha = document.getElementById('senha');
+    let ConfirSenha = document.getElementById('confirmsenha');
+    let Email = document.getElementById('email');
+}
+
 goToCadastro = function () {
     let login = document.getElementById('telaLogin');
     let discord = document.getElementById('telaDiscord');
