@@ -126,14 +126,26 @@
   </div>
 
   <div id="telaBusca">
-    <div class="search-units">
-      <h1>BUSQUE PELO SEU CHEAPSHARK PELO ID:</h1>
-      <div>
-        <input style="padding: 5px;" type="text" id="search-text" />
-        <button style="cursor: pointer; padding: 5px;" onclick="searchItem()">Buscar</button>
-      </div>
+    <div id="headerNewPublics">
+      <input type="text" placeholder="Busque pela publicação desejada"/>
+      <button style="cursor: pointer;" onclick="newPublicUser()">Nova Publicação</button>
     </div>
-    <div id="list-units"></div>
+    <div class="display-flex-center area-publics">
+      <h2>PUBLICAÇÕES</h2>
+    </div>
+    <div class="show-publics">
+      <!--Estrutura para cada publicação-->
+      <div class="display-flex-center">
+        <div class="publics-user">
+          <h2>PUBLICAÇÃO 1</h2>
+          <p>
+            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+          </p>
+          <img src="https://th.bing.com/th/id/R.d56fc9ff62505885e77f787c2cec8b7b?rik=gaMM%2feKcUfvRVQ&pid=ImgRaw&r=0" style="width: 200px; height: 200px;" />
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <script src="./JS/validateFields.js"></script>
