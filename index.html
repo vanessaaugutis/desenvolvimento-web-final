@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title> WebSite </title>
+  <title> WebSite - Vanessa e Thiago </title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="CSS/index.css">
 </head>
@@ -114,11 +114,13 @@
       <div class="field-form-login">
         <label>E-mail </label>
         <input id="emailUser" type="text" placeholder="Digite seu e-mail" />
+        <p id="invalidEmail" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
       </div>
 
       <div class="field-form-login">
         <label>Senha </label>
         <input id="passwordUser" type="password" placeholder="Digite sua senha" />
+        <p id="invalidPassword" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
       </div>
 
       <button class="button-login" onclick="buttonClick()">Entrar</button>
@@ -144,14 +146,17 @@
       <label for="email">E-mail</label>
       <input type="email" id="email" paceholder="">
     </div>
+
+    <p id="noneAllFields" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
     <div class="bttcad">
       <button onclick="pegarDados()">Cadastrar</button>
     </div>
+    
   </div>
 
   <div id="telaBusca">
     <div id="headerNewPublics">
-      <input type="text" placeholder="Busque pelo personagem desejado"/>
+      <input onclick="searchItem()" type="text" placeholder="Busque pelo personagem desejado"/>
       <button style="cursor: pointer;" onclick="newPersonagem()">Novo Personagem</button>
     </div>
     <div class="display-flex-center area-publics">
@@ -179,16 +184,18 @@
   <div id="telaNovoPersonagem">
     <div id="area-criar-personagem">
       <label class="text">NOME DO PERSONAGEM:</label>
-      <input type="text" placeholder="Digite o nome do personagem" />
+      <input id="nomePersonagem" type="text" placeholder="Digite o nome do personagem" />
 
       <label class="text">FORÇA DO PERSONAGEM:</label>
-      <input type="number" placeholder="Selecione a força do personagem" />
+      <input id="forcaPersonagem" type="number" placeholder="Selecione a força do personagem" />
       
       <label>DESCRIÇÂO DO PERSONAGEM:</label>
-      <textarea rows="4" cols="50"></textarea>
+      <textarea id="descricaoPersonagem" rows="4" cols="50"></textarea>
 
       <label class="text">FOTO DO PERSONAGEM:</label>
-      <input type="text" placeholder="Cole o link da imagem do personagem" />
+      <input id="fotoPersonagem" type="text" placeholder="Cole o link da imagem do personagem" />
+
+      <p id="noneAllFieldsPersonagem" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
 
       <button onclick="criaPersonagem()">CRIAR</button>
       <button onclick="fechaModal()">FECHAR</button>

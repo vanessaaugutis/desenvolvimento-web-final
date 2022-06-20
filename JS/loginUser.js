@@ -1,4 +1,3 @@
-//cria o método de http para conectar com api
 let xmlhttp = new XMLHttpRequest();
 
 openLogin = function() {
@@ -22,47 +21,37 @@ fechaModal = function() {
 }
 
 criaPersonagem = function() {
-    console.log("implementar");
+    let Nome = document.getElementById('nomePersonagem');
+    let Forca = document.getElementById('forcaPersonagem');
+    let Descricao = document.getElementById('descricaoPersonagem');
+    let Foto = document.getElementById('fotoPersonagem');
+    let noneAllFieldsPersonagem = document.getElementById('noneAllFieldsPersonagem');
+
+    if(!Nome.value || !Forca.value || !Descricao.value || !Foto.value) {
+        noneAllFieldsPersonagem.style.display = 'block';
+        return;
+    } else {
+        noneAllFieldsPersonagem.style.display = 'none';
+    }
+
+    dadosPersonagem = {
+        "nomePersonagem": Nome.value,
+        "forca": Forca.value,
+        "descricaoPersonagem": Descricao.value,
+        "fotoPersonagem": Foto.value
+    }
+
+    console.log(dadosPersonagem);
+    //Salvar no mongoDB
 }
 
-// getListUnits = function () {
-//     xmlhttp.open(
-//         'GET', 'https://www.cheapshark.com/api/1.0/games?ids=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', true
-//     );
+getListUnits = function () {
+    //pegar personagens do MongoDB
+}
 
-//     xmlhttp.onreadystatechange = function () {
-//         if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-//             alert("Erro ao carregar");
-//         } else 
-//         if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-//             let retorno = JSON.parse(xmlhttp.responseText);
-
-//             let telaList = document.getElementById('list-units');
-            
-//             for(let i=0; i <= 19; i++) {
-//                 if(retorno[i]?.info) {
-//                     telaList.appendChild(createMenuItem(i, retorno[i].info.title));
-//                 }
-                
-//             }
-//         }
-//     };
-
-//     xmlhttp.setRequestHeader("Content-Type", "application/json");
-//     xmlhttp.setRequestHeader("Access-Control-Allow-Origin",  "*");
-//     xmlhttp.send();
-// }
-
-// function createMenuItem(id, name) {
-//     let li = document.createElement('li');
-//     let span = document.createElement('span');
-//     span.textContent = name;
-//     li.textContent = id + '- ';
-//     li.appendChild(span);
-//     return li;
-// }
 
 //VERIFICA SE TEM TOKEN PARA MANTER O USUÁRIO LOGADO
+// let token = meuStorage.getItem('token');
 // if (token) {
     let login = document.getElementById('telaLogin');
     let discord = document.getElementById('telaDiscord');
@@ -77,44 +66,30 @@ criaPersonagem = function() {
 
 validateLogin = function () {
 
-    // xmlhttp.open(
-    //     'POST', 'https://reqres.in/api/login', true
-    // );
+    let email = document.getElementById("emailUser");
+    let password = document.getElementById("passwordUser");
+    let userValid = false;
 
-    // let email = document.getElementById("emailUser");
-    // let password = document.getElementById("passwordUser");
-    // let userValid = false;
+    login = {
+        "email": email.value,
+        "senha": password.value
+    }
 
-    // xmlhttp.onreadystatechange = function () {
-    //     if(xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 400) {
-    //         alert("E-mail ou senha incorretos");
-    //     } else 
-    //     if (xmlhttp.readyState === XMLHttpRequest.DONE && xmlhttp.status === 200) {
-    //         let retorno = JSON.parse(xmlhttp.responseText);
-    //         meuStorage.setItem('token', retorno.token);
+    console.log(login);
+    //verificar se existe no mongoDB
+    
+    // if (existir) {
+    //     meuStorage.setItem('token', email.value);
              
-    //         userValid = true;
-    //         let login = document.getElementById('telaLogin');
-    //         let busca = document.getElementById('telaBusca');
+        let login = document.getElementById('telaLogin');
+        let busca = document.getElementById('telaBusca');
         
-    //         if (userValid) {
-    //             login.style.display = 'none';
-    //             busca.style.display = 'flex';
-    //         }
-    //     }
-    // };
-
-    // xmlhttp.setRequestHeader("Content-Type", "application/json");
-    // xmlhttp.send(JSON.stringify({ "email": email.value, "password": password.value }));
-    let login = document.getElementById('telaLogin');
-    let discord = document.getElementById('telaDiscord');
-    let busca = document.getElementById('telaBusca');
-    let cadastro = document.getElementById('telaCadastro');
-
-    login.style.display = 'none';
-    discord.style.display = 'none';
-    busca.style.display = 'block';
-    cadastro.style.display = 'none';
+        login.style.display = 'none';
+        busca.style.display = 'block';
+    // } else {
+    //     alert("Usuário não encontrado");
+    // }
+    
 }
 
 
