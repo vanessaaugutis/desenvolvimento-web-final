@@ -383,3 +383,38 @@ a {
     text-align: center;
 }
 
+#telaNovoPersonagem {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.7);
+}
+
+#telaNovoPersonagem #area-criar-personagem {
+    width: 500px;
+    padding: 10px;
+    position: absolute;
+    background-color: #FFF;
+}
+
+#telaNovoPersonagem #area-criar-personagem input,
+#telaNovoPersonagem #area-criar-personagem textarea {
+    display: block;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+#telaNovoPersonagem #area-criar-personagem button {
+    padding: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+

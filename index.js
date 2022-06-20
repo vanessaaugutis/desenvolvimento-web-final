@@ -1,14 +1,27 @@
 // ExpressJS do projeto (lembrando que o ExpressJs é um framework de NodeJs)
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+// var bodyParser = require('body-parser');
+// var cookieParser = require('cookie-parser');
+var path = require('path');
+var Personagens = require('./model/personagens');
+
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// app.get('/', function (req, res) {
+//   Usuario.find({}).exec(function (err, docs) {
+//       res.render('index.html', { Usuarios: docs });
+//   })
+
+// })
+
+// app.post('/', function (req, res)) {
+//   Usuario.find({ nome: new RegExp(req.body.txtPesquisa, 'gi') }).exec(function (err, docs) {
+//       res.render('index.html', { Usuarios: docs });
+//   })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log("Conectado");
 })
 
 

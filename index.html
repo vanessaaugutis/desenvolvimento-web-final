@@ -151,30 +151,47 @@
 
   <div id="telaBusca">
     <div id="headerNewPublics">
-      <input type="text" placeholder="Busque pela publicação desejada" />
-      <button style="cursor: pointer;" onclick="newPublicUser()">Nova Publicação</button>
+      <input type="text" placeholder="Busque pelo personagem desejado"/>
+      <button style="cursor: pointer;" onclick="newPersonagem()">Novo Personagem</button>
     </div>
     <div class="display-flex-center area-publics">
-      <h2>PUBLICAÇÕES</h2>
+      <h2>PERSONAGENS (UNITS)</h2>
     </div>
     <div class="show-publics">
       <!--Estrutura para cada publicação-->
       <div class="display-flex-center">
         <div class="publics-user">
-          <h2>PUBLICAÇÃO 1</h2>
+          <h2>PERSONAGEM 1</h2>
           <p>
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo
-            utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
-            para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto
-            para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando
-            a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser
-            integrado a softwares de editoração eletrônica como Aldus PageMaker.
+            Descrição: Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
           </p>
-          <img src="https://th.bing.com/th/id/R.d56fc9ff62505885e77f787c2cec8b7b?rik=gaMM%2feKcUfvRVQ&pid=ImgRaw&r=0"
-            style="width: 200px; height: 200px;" />
+          <p>
+            Força: 55
+          </p>
+
+          <img src="https://th.bing.com/th/id/R.d56fc9ff62505885e77f787c2cec8b7b?rik=gaMM%2feKcUfvRVQ&pid=ImgRaw&r=0" style="width: 200px; height: 200px;" />
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <div id="telaNovoPersonagem">
+    <div id="area-criar-personagem">
+      <label class="text">NOME DO PERSONAGEM:</label>
+      <input type="text" placeholder="Digite o nome do personagem" />
+
+      <label class="text">FORÇA DO PERSONAGEM:</label>
+      <input type="number" placeholder="Selecione a força do personagem" />
+      
+      <label>DESCRIÇÂO DO PERSONAGEM:</label>
+      <textarea rows="4" cols="50"></textarea>
+
+      <label class="text">FOTO DO PERSONAGEM:</label>
+      <input type="text" placeholder="Cole o link da imagem do personagem" />
+
+      <button onclick="criaPersonagem()">CRIAR</button>
+      <button onclick="fechaModal()">FECHAR</button>
     </div>
   </div>
 

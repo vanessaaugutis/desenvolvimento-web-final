@@ -9,8 +9,20 @@ openLogin = function() {
     discord.style.display = 'none';
 }
 
-newPublicUser = function() {
-    console.log("XXXXX");
+newPersonagem = function() {
+    let novoPersonagem = document.getElementById('telaNovoPersonagem');
+
+    novoPersonagem.style.display = 'flex';
+}
+
+fechaModal = function() {
+    let novoPersonagem = document.getElementById('telaNovoPersonagem');
+
+    novoPersonagem.style.display = 'none';
+}
+
+criaPersonagem = function() {
+    console.log("implementar");
 }
 
 // getListUnits = function () {
@@ -94,6 +106,15 @@ validateLogin = function () {
 
     // xmlhttp.setRequestHeader("Content-Type", "application/json");
     // xmlhttp.send(JSON.stringify({ "email": email.value, "password": password.value }));
+    let login = document.getElementById('telaLogin');
+    let discord = document.getElementById('telaDiscord');
+    let busca = document.getElementById('telaBusca');
+    let cadastro = document.getElementById('telaCadastro');
+
+    login.style.display = 'none';
+    discord.style.display = 'none';
+    busca.style.display = 'block';
+    cadastro.style.display = 'none';
 }
 
 
