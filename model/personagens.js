@@ -1,10 +1,10 @@
 var conexao = require('../config/conexao');
 
-var UsuarioSchema = conexao.Schema({
+var PersonagensSchema = conexao.Schema({
     nome: { type: String },
     força: { type: String },
     avatar: { type: String }
 
 })
 
-module.exports = conexao.model("Usuario", UsuarioSchema);
+module.exports = conexao.model("Personagem", PersonagensSchema);
