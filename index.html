@@ -3,9 +3,289 @@
 <html>
 
 <head>
-  <title> WebSite </title>
+  <title> WebSite - Vanessa e Thiago </title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="CSS/index.css">
+  <style>
+    /* Estilos globais */
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+
+    /* Estilos do cabeçalho */
+    .neg {
+      font-weight: bold
+    }
+
+    .classe {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .larg {
+      padding: 0px 40px;
+      background-color: #404eed;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .itemenu {
+      margin-left: 10px;
+      color: #fff;
+    }
+
+    .esp {
+      padding: 20px;
+    }
+
+    .corent {
+      color: white;
+    }
+
+    .cb {
+      color: white;
+    }
+
+    .but1 {
+      color: white;
+    }
+
+    .mobileAppButton-J8RITc {
+      margin-right: 16px;
+    }
+
+    .button-1I7cbj {
+      white-space: nowrap;
+    }
+
+    .buttonSmall-1FIG7u {
+      border-radius: 40px;
+      font-size: 14px;
+      padding: 7px 16px;
+    }
+
+    .buttonWhite-1M-wED {
+      background-color: white;
+      color: var(--not-quite-black);
+    }
+
+    .button-ZGMevK {
+      line-height: 24px;
+      cursor: pointer;
+      font-weight: 500;
+      display: inline-flex;
+      -webkit-box-align: center;
+      align-items: center;
+      box-sizing: border-box;
+      transition-property: background-color, color, box-shadow, -webkit-box-shadow;
+      transition-duration: .2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .menu .itemenu .but1:hover {
+      text-decoration: underline;
+    }
+
+    .icon-burguer {
+      display: none !important;
+    }
+
+    /*  Estilos do conteúdo */
+
+    #content {
+      display: flex;
+      width: 100vw;
+      height: 91.3vh;
+      background-color: #404eed;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    #content .image-one {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      height: auto;
+      width: auto;
+      max-width: none;
+      margin-left: -1030px;
+    }
+
+    #content .area-texts {
+      margin: 0 auto;
+      width: 625px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    #content .area-texts h1 {
+      font-size: 62px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    #content .area-texts p {
+      margin-top: 40px;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.625;
+    }
+
+    #content .area-texts .area-buttons {
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #content .area-texts .area-buttons button {
+      border-radius: 28px;
+      font-size: 20px;
+      padding: 16px 32px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #content .area-texts .area-buttons button.button-download {
+      background: #fff;
+      display: flex;
+    }
+
+    #content .area-texts .area-buttons button.button-download:hover {
+      color: #404eed;
+      transition: 0.3s;
+    }
+
+    #content .area-texts .area-buttons button.button-download span {
+      margin-left: 5px;
+      ;
+    }
+
+    #content .area-texts .area-buttons button.button-open-discord {
+      background-color: #23272a;
+      color: #fff;
+    }
+
+    #content .area-texts .area-buttons button.button-open-discord:hover {
+      background-color: #36393f;
+      transition: 0.3s;
+    }
+
+    #content .image-two {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: 370px;
+    }
+
+
+    @media (max-width: 1000px) {
+      .classe {
+        width: 97vw;
+      }
+
+      .cb svg {
+        width: 300px;
+        height: 100px;
+      }
+
+      .icon-burguer svg {
+        width: 100px;
+        height: 70px;
+      }
+
+      .button-ZGMevK {
+        padding: 30px 50px;
+        font-size: 25px;
+      }
+
+      #content {
+        height: 100vh;
+        padding-left: 50px;
+      }
+
+      .space-header-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .icon-burguer {
+        display: block !important;
+        cursor: pointer;
+      }
+
+      #content .image-two,
+      #content .image-one,
+      .menu {
+        display: none;
+      }
+
+      #content .area-texts .area-buttons {
+        flex-direction: column;
+      }
+
+      #content .area-texts .area-buttons button.button-open-discord {
+        margin-top: 40px;
+        width: 90%;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      #content .area-texts .area-buttons button {
+        padding: 30px 50px;
+      }
+
+      #content .area-texts .area-buttons button.button-download {
+        width: 80%;
+        font-size: 40px;
+      }
+
+      #content .area-texts .area-buttons button.button-download svg {
+        width: 60px;
+        height: 40px;
+      }
+
+      #content .area-texts {
+        text-align: left;
+        align-items: flex-start;
+        margin-left: 25px;
+      }
+
+      #content .area-texts {
+        width: 100%;
+      }
+
+      #content .area-texts h1 {
+        font-size: 75px;
+      }
+
+      #content .area-texts p {
+        font-size: 36px;
+        margin-left: 5px;
+      }
+
+      #content .area-texts .area-buttons button {
+        border-radius: 40px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -102,85 +382,20 @@
           </button>
           <button class="button-open-discord">Abra o Discord no seu navegador</button>
         </div>
+        <form method="GET" action="/login" id="irlogin"></form>
 
       </div>
-      <img class="image-two" src="./img/image1.svg">
     </div>
   </div>
 
-  <div id="telaLogin">
-    <div class="content-login">
-      <h1 class="title-login">LOGIN</h1>
-      <div class="field-form-login">
-        <label>E-mail </label>
-        <input id="emailUser" type="text" placeholder="Digite seu e-mail" />
-      </div>
+  <script>
+    let xmlhttp = new XMLHttpRequest();
 
-      <div class="field-form-login">
-        <label>Senha </label>
-        <input id="passwordUser" type="password" placeholder="Digite sua senha" />
-      </div>
+    openLogin = function () {
+      document.getElementById("irlogin").submit();
+    }
 
-      <button class="button-login" onclick="buttonClick()">Entrar</button>
-      <button class="button-cadastro" onclick="goToCadastro()">Me cadastrar</button>
-    </div>
-  </div>
-
-  <div id="telaCadastro">
-    <h1> Cadastro</h1>
-    <div class='cad'>
-      <label for="nome">Nome</label>
-      <input type="nome" id="nome">
-    </div>
-    <div class='cad'>
-      <label for="senha">Senha</label>
-      <input type="senha" id="senha">
-    </div>
-    <div class="cad">
-      <label for="confirmsenha">Confirmar senha</label>
-      <input type="Confirsenha" id="confirmsenha" paceholder="">
-    </div>
-    <div class="cad">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" paceholder="">
-    </div>
-    <div class="cad">
-      <button onclick="pegarDados()">Cadastrar</button>
-      <div id="container-imagem"></div>
-    </div>
-  </div>
-
-  <div id="telaBusca">
-    <div id="headerNewPublics">
-      <input type="text" placeholder="Busque pela publicação desejada" />
-      <button style="cursor: pointer;" onclick="newPublicUser()">Nova Publicação</button>
-    </div>
-    <div class="display-flex-center area-publics">
-      <h2>PUBLICAÇÕES</h2>
-    </div>
-    <div class="show-publics">
-      <!--Estrutura para cada publicação-->
-      <div class="display-flex-center">
-        <div class="publics-user">
-          <h2>PUBLICAÇÃO 1</h2>
-          <p>
-            Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo
-            utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
-            para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto
-            para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando
-            a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser
-            integrado a softwares de editoração eletrônica como Aldus PageMaker.
-          </p>
-          <img src="https://th.bing.com/th/id/R.d56fc9ff62505885e77f787c2cec8b7b?rik=gaMM%2feKcUfvRVQ&pid=ImgRaw&r=0"
-            style="width: 200px; height: 200px;" />
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="./JS/validateFields.js"></script>
-  <script src="./JS/loginUser.js"></script>
+  </script>
 </body>
 
 </html>

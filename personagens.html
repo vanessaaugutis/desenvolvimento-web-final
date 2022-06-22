@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <html>
+  
+  <head>
+    <title> WebSite - Vanessa e Thiago - Personagens </title>
+    <meta charset="utf-8">
+    <style>
+        /* Estilos globais */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+  
+        body {
+            overflow-x: hidden;
+            font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+  
+        /*TELA DE BUSCA E PUBLICAÇÕES*/
+        #telaBusca {
+            display: none;
+            padding-top: 50px;
+            width: 100vw;
+            height: 100vh;
+        }
+  
+        #telaBusca h1 {
+            padding-left: 40px;
+        } 
+  
+        #telaBusca input {
+            width: 300px;
+  
+        }
+  
+        #telaBusca p {
+            color: #000000;
+        }
+  
+        #telaBusca .display-flex-center {
+            display: flex;
+            justify-content: center;
+        }
+  
+        #telaBusca .area-publics {
+            margin-top: 100px;
+        }
+  
+        #telaBusca .area-publics h2 {
+            margin-bottom: 100px;
+        }
+  
+        #telaBusca #headerNewPublics {
+            display: flex;
+            justify-content: space-around;
+        }
+  
+        #telaBusca .show-publics .publics-user {
+            border: 1px solid #000000;
+            width: 500px;
+            margin: 30px 0px;
+            padding: 10px;
+            text-align: center;
+        }
+  
+        #telaNovoPersonagem {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,.7);
+        }
+  
+        #telaNovoPersonagem #area-criar-personagem {
+            width: 500px;
+            padding: 10px;
+            position: absolute;
+            background-color: #FFF;
+        }
+  
+        #telaNovoPersonagem #area-criar-personagem input,
+        #telaNovoPersonagem #area-criar-personagem textarea {
+            display: block;
+            min-width: 300px;
+            margin-bottom: 20px;
+        }
+  
+        #telaNovoPersonagem #area-criar-personagem button {
+            padding: 5px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+  
+  
+    </style>
+  </head>
+  
+  <body>
+    <div id="telaBusca">
+        <div id="headerNewPublics">
+          <input onclick="searchItem()" type="text" placeholder="Busque pelo personagem desejado"/>
+          <button style="cursor: pointer;" onclick="newPersonagem()">Novo Personagem</button>
+        </div>
+        <div class="display-flex-center area-publics">
+          <h2>PERSONAGENS (UNITS)</h2>
+        </div>
+        <div class="show-publics">
+          <!--Estrutura para cada publicação-->
+          <div class="display-flex-center">
+            <div class="publics-user">
+              <h2>PERSONAGEM 1</h2>
+              <p>
+                Descrição: Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.
+              </p>
+              <p>
+                Força: 55
+              </p>
+    
+              <img src="https://th.bing.com/th/id/R.d56fc9ff62505885e77f787c2cec8b7b?rik=gaMM%2feKcUfvRVQ&pid=ImgRaw&r=0" style="width: 200px; height: 200px;" />
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <div id="telaNovoPersonagem">
+        <div id="area-criar-personagem">
+          <label class="text">NOME DO PERSONAGEM:</label>
+          <input id="nomePersonagem" type="text" placeholder="Digite o nome do personagem" />
+    
+          <label class="text">FORÇA DO PERSONAGEM:</label>
+          <input id="forcaPersonagem" type="number" placeholder="Selecione a força do personagem" />
+          
+          <label>DESCRIÇÂO DO PERSONAGEM:</label>
+          <textarea id="descricaoPersonagem" rows="4" cols="50"></textarea>
+    
+          <label class="text">FOTO DO PERSONAGEM:</label>
+          <input id="fotoPersonagem" type="text" placeholder="Cole o link da imagem do personagem" />
+    
+          <p id="noneAllFieldsPersonagem" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
+    
+          <button onclick="criaPersonagem()">CRIAR</button>
+          <button onclick="fechaModal()">FECHAR</button>
+        </div>
+      </div>
+
+      <script>
+  
+        newPersonagem = function() {
+            let novoPersonagem = document.getElementById('telaNovoPersonagem');
+  
+            novoPersonagem.style.display = 'flex';
+        }
+  
+        fechaModal = function() {
+            let novoPersonagem = document.getElementById('telaNovoPersonagem');
+  
+            novoPersonagem.style.display = 'none';
+        }
+  
+        criaPersonagem = function() {
+            let Nome = document.getElementById('nomePersonagem');
+            let Forca = document.getElementById('forcaPersonagem');
+            let Descricao = document.getElementById('descricaoPersonagem');
+            let Foto = document.getElementById('fotoPersonagem');
+            let noneAllFieldsPersonagem = document.getElementById('noneAllFieldsPersonagem');
+  
+            if(!Nome.value || !Forca.value || !Descricao.value || !Foto.value) {
+                noneAllFieldsPersonagem.style.display = 'block';
+                return;
+            } else {
+                noneAllFieldsPersonagem.style.display = 'none';
+            }
+  
+            dadosPersonagem = {
+                "nomePersonagem": Nome.value,
+                "forca": Forca.value,
+                "descricaoPersonagem": Descricao.value,
+                "fotoPersonagem": Foto.value
+            }
+  
+            console.log(dadosPersonagem);
+            //Salvar no mongoDB
+        }
+  
+        getListUnits = function () {
+            //pegar personagens do MongoDB
+        }
+  
+        searchItem = function () {
+            let inputSearch = document.getElementById('search-text');
+            //buscar no MongoDB
+        }
+  
+    </script>
+    
+  </body>
+  
+  </html>
+  
+  
+  
+  

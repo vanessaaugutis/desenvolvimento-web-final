@@ -1,0 +1,1 @@
+const MONGO_URI = 'mongodb+srv://bancoweb:bancoweb123@cluster0.z7fhf9a.mongodb.net/bancodedados' | process.env.MONGO_URI

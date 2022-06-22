@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<html>
+
+<head>
+  <title> WebSite - Vanessa e Thiago - Cadastro </title>
+  <meta charset="utf-8">
+  <style>
+      /* Estilos globais */
+      * {
+          padding: 0;
+          margin: 0;
+      }
+
+      body {
+          overflow-x: hidden;
+          font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+      }
+
+  </style>
+</head>
+
+<body>
+    <form method="POST" action="/cadastro" id="telaCadastro">
+        <h1> Cadastrar</h1>
+        <div class='nm'>
+          <label for="nome">Nome</label>
+          <input type="nome" id="nome">
+        </div>
+        <div class='snh'>
+          <label for="senha">Senha</label>
+          <input type="senha" id="senha">
+        </div>
+        <div class="confs">
+          <label for="confirmsenha">Confirmar senha</label>
+          <input type="Confirsenha" id="confirmsenha" paceholder="">
+        </div>
+        <div class="eml">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" paceholder="">
+        </div>
+    
+        <p id="noneAllFields" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
+        <div class="bttcad">
+          <button type="button" onclick="pegarDados()">Cadastrar</button>
+        </div>
+
+        
+      </form>
+      <script>
+
+        pegarDados = function () {
+            let Nome = document.getElementById('nome');
+            let Senha = document.getElementById('senha');
+            let ConfirSenha = document.getElementById('confirmsenha');
+            let Email = document.getElementById('email');
+            let noneAllFields = document.getElementById('noneAllFields');
+    
+            if(!Nome.value || !Senha.value || !ConfirSenha.value || !Email.value) {
+                noneAllFields.style.display = 'block';
+                return;
+            } else {
+                noneAllFields.style.display = 'none';
+            }
+
+            let telaCadastro = document.getElementById('telaCadastro');
+            telaCadastro.submit(); 
+    }
+  
+    </script>
+</body>
+
+</html>
+
+
