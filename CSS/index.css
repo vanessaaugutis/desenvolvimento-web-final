@@ -325,7 +325,7 @@ a {
     font-size: 18px;
     font-weight: 700;
     background-color: #FFF;
-    border-radius: 12px;
+    border-radius: 15px;
     color: #404eed;
     margin-top: 40px;
     padding: 5px 20px;
@@ -346,7 +346,7 @@ a {
 
 #telaBusca h1 {
     padding-left: 40px;
-} 
+}
 
 #telaBusca input {
     width: 300px;
@@ -383,3 +383,48 @@ a {
     text-align: center;
 }
 
+.button-cadastro {
+    border: none;
+    font-size: 20px;
+    font-weight: 00;
+    background-color: #FFF;
+    border-radius: 15px;
+    color: #404eed;
+    margin-top: 40px;
+    padding: 5px 20px;
+    cursor: pointer;
+
+}
+
+#telaCadastro {
+    border: 5px solid #404eed;
+    width: 200px;
+    margin: 50px 10px;
+    padding: 10px;
+    text-align: center;
+    padding-left: 40px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #FFF;
+    border-radius: 15px;
+    color: #404eed;
+    margin-top: 40px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.cad {
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: #FFF;
+    border-radius: 15px;
+    color: #404eed;
+    padding: 10px 20px;
+    cursor: pointer;
+
+
+}
