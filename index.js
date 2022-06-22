@@ -4,7 +4,7 @@ const app = express();
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
-var Personagem = require('./model/personagens');
+var Personagem = require('./model/personagems');
 var Usuario = require('./model/usuarios');
 
 app.use(bodyParser.json());
@@ -32,24 +32,41 @@ app.get('/peronagens', function (req, res) {
 
 //inserir dados
 app.post('/cadastro', function (req, res) {
-   var usuario = new Usuario({
-      nome: req.body.nome,
-      senha: req.body.senha,
-      email: req.body.email
-   })
+  var usuario = new Usuario({
+    nome: req.body.nome,
+    senha: req.body.senha,
+    email: req.body.email
+  })
 
-   usuario.save(function (err) {
-       if (err) {
-           console.log(err);
-       } else {
-          res.redirect('../login.html');
-       }
-   })
+  usuario.save(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('../login.html');
+    }
+  })
 })
+/*app.post('/personagems', function (req, res) {
+  var personagems = new Personagems({
+    nome: req.body.nome,
+    força: req.body.senha,
+    avatar: req.body.email
+  })
+
+  usuario.save(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('../login.html');
+    }
+  })
+})/** */
 
 let port = process.env.PORT || 3000;
 app.listen(port, function () {
-    console.log("Conexão inicializada.");
+  console.log("Conexão inicializada.");
 })
+
+
 
 
