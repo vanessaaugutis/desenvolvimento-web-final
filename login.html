@@ -81,11 +81,11 @@
 
 <body>
     <div id="telaLogin">
-        <div class="content-login">
+        <form method="GET" action="/validateLogin" id="validaLogin" class="content-login">
           <h1 class="title-login">LOGIN</h1>
           <div class="field-form-login">
             <label>E-mail </label>
-            <input id="emailUser" type="text" placeholder="Digite seu e-mail" />
+            <input id="emailUser" name="emailUser" type="text" placeholder="Digite seu e-mail" />
             <p id="invalidEmail" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
           </div>
     
@@ -95,12 +95,12 @@
             <p id="invalidPassword" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
           </div>
     
-          <button class="button-login" onclick="buttonClick()">Entrar</button>
-          <button class="button-login" onclick="goToCadastro()">Me cadastrar</button>
+          <button class="button-login" type="button" onclick="buttonClick()">Entrar</button>
+          <button class="button-login" type="button" onclick="goToCadastro()">Me cadastrar</button>
           <form method="GET" action="/personagems" id="validaLogin"></form>
           <form method="GET" action="/cadastro" id="irCadastro"></form>
         </div>
-      </div>
+    </form>
 
       <script>
   

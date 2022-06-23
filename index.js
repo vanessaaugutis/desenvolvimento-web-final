@@ -37,13 +37,14 @@ app.get('/personagems', function (req, res) {
 })
 
 app.get('/showpersonagems', function (req, res) {
-  var showPersonagems = Personagem.find();
-  console.log(showPersonagems);
+  var showPersonagems = Personagem.find({});
+  req.body.publicsUser = showPersonagems;
 })
 
-// app.get('/validate', function (req, res) {
-//   res.render('../personagems.html');
-// })
+app.get('/validateLogin', function (req, res) {
+  var existe = Usuario.findOne({email: req.body.emailUser});
+  res.render('../personagems.html');
+})
 
 //inserir dados
 app.post('/cadastro', function (req, res) {
