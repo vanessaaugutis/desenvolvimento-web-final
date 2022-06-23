@@ -6,11 +6,17 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 var Personagem = require('./model/personagems');
 var Usuario = require('./model/usuarios');
+const cool = require('cool-ascii-faces');
+
+app
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/cool', (req, res) => res.send(cool()))
+  .listen(5000, () => console.log(`Listening on ${ 5000 }`));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-app.set("view engine", "ejs");
 app.engine('html', require('ejs').renderFile);
 
 
@@ -26,8 +32,16 @@ app.get('/cadastro', function (req, res) {
   res.render('../cadastro.html');
 })
 
-app.get('/peronagens', function (req, res) {
-  res.render('../personagens.html');
+app.get('/personagems', function (req, res) {
+  res.render('../personagems.html');
+})
+
+app.get('/validate', function (req, res) {
+  res.render('../personagems.html');
+  // let existe = Usuario.find({email: req.body.emailLogin, senha: req.body.senhaLogin});
+  // if (existe) {
+  //   res.render('../personagems.html');
+  // }
 })
 
 //inserir dados
@@ -46,25 +60,22 @@ app.post('/cadastro', function (req, res) {
     }
   })
 })
-/*app.post('/personagems', function (req, res) {
+
+app.post('/personagems', function (req, res) {
   var personagems = new Personagems({
-    nome: req.body.nome,
-    força: req.body.senha,
-    avatar: req.body.email
+    nome: req.body.nomePersonagem,
+    forca: req.body.forcaPersonagem,
+    descricao:  req.body.descricaoPersonagem,
+    foto:  req.body.fotoPersonagem,
   })
 
-  usuario.save(function (err) {
+  personagems.save(function (err) {
     if (err) {
       console.log(err);
     } else {
       res.redirect('../login.html');
     }
   })
-})/** */
-
-let port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log("Conexão inicializada.");
 })
 
 

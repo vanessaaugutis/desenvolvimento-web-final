@@ -97,6 +97,7 @@
     
           <button class="button-login" onclick="buttonClick()">Entrar</button>
           <button class="button-cadastro" onclick="goToCadastro()">Me cadastrar</button>
+          <form method="GET" action="/validate" id="validaLogin"></form>
           <form method="GET" action="/cadastro" id="irCadastro"></form>
         </div>
       </div>
@@ -119,30 +120,8 @@
   
   
         validateLogin = function () {
-  
-            let email = document.getElementById("emailUser");
-            let password = document.getElementById("passwordUser");
-            let userValid = false;
-  
-            login = {
-                "email": email.value,
-                "senha": password.value
-            }
-  
-            console.log(login);
-            //verificar se existe no mongoDB
-            
-            // if (userValid) {
-            //     meuStorage.setItem('token', email.value);
-                    
-                let login = document.getElementById('telaLogin');
-                let busca = document.getElementById('telaBusca');
-                
-                login.style.display = 'none';
-                busca.style.display = 'block';
-            // } else {
-            //     alert("Usuário não encontrado");
-            // }
+            let formLogin = document.getElementById("validaLogin");
+            formLogin.submit(); 
         }
 
         goToCadastro = function () {

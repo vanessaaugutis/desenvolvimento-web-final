@@ -131,7 +131,7 @@
         </div>
       </div>
       <div id="telaNovoPersonagem">
-        <div id="area-criar-personagem">
+        <form method="POST" action="/personagems" id="area-criar-personagem">
           <label class="text">NOME DO PERSONAGEM:</label>
           <input id="nomePersonagem" type="text" placeholder="Digite o nome do personagem" />
     
@@ -146,9 +146,9 @@
     
           <p id="noneAllFieldsPersonagem" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
     
-          <button onclick="criaPersonagem()">CRIAR</button>
-          <button onclick="fechaModal()">FECHAR</button>
-        </div>
+          <button type="button" onclick="criaPersonagem()">CRIAR</button>
+          <button type="button" onclick="fechaModal()">FECHAR</button>
+        </form>
       </div>
 
       <script>
