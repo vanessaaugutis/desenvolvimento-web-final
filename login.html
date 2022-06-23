@@ -3,110 +3,110 @@
 <html>
 
 <head>
-  <title> WebSite - Vanessa e Thiago - Login </title>
-  <meta charset="utf-8">
-  <style>
-    /* Estilos globais */
-    * {
-        padding: 0;
-        margin: 0;
-    }
+    <title> WebSite - Vanessa e Thiago - Login </title>
+    <meta charset="utf-8">
+    <style>
+        /* Estilos globais */
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-    body {
-        overflow-x: hidden;
-        font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    }
+        body {
+            overflow-x: hidden;
+            font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
 
-    #telaLogin {
-        display: none;
-    }
+        #telaLogin {
+            display: none;
+        }
 
-    #telaLogin {
-        width: 100vw;
-        height: 100vh;
-        background-color: #404eed;
-        color: #FFF;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+        #telaLogin {
+            width: 100vw;
+            height: 100vh;
+            background-color: #404eed;
+            color: #FFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    #telaLogin .content-login {
-        border: 1px solid #FFF;
-        border-radius: 8px;
-        padding: 40px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        #telaLogin .content-login {
+            border: 1px solid #FFF;
+            border-radius: 8px;
+            padding: 40px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    #telaLogin .title-login {
-        margin-bottom: 15px;
-    }
+        #telaLogin .title-login {
+            margin-bottom: 15px;
+        }
 
-    #telaLogin .field-form-login {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-    }
+        #telaLogin .field-form-login {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
 
-    #telaLogin .field-form-login input {
-        border: none;
-        outline: none;
-        padding: 5px 20px;
-        margin-top: 5px;
-    }
+        #telaLogin .field-form-login input {
+            border: none;
+            outline: none;
+            padding: 5px 20px;
+            margin-top: 5px;
+        }
 
-    #telaLogin .button-login {
-        border: none;
-        font-size: 18px;
-        font-weight: 700;
-        background-color: #FFF;
-        border-radius: 12px;
-        color: #404eed;
-        margin-top: 40px;
-        padding: 5px 20px;
-        cursor: pointer;
-    }
+        #telaLogin .button-login {
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: #FFF;
+            border-radius: 12px;
+            color: #404eed;
+            margin-top: 40px;
+            padding: 5px 20px;
+            cursor: pointer;
+        }
 
-    #telaLogin .button-login:hover {
-        text-decoration: underline;
-    }
-
-
-</style>
+        #telaLogin .button-login:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
     <div id="telaLogin">
         <form method="GET" action="/validateLogin" id="validaLogin" class="content-login">
-          <h1 class="title-login">LOGIN</h1>
-          <div class="field-form-login">
-            <label>E-mail </label>
-            <input id="emailUser" name="emailUser" type="text" placeholder="Digite seu e-mail" />
-            <p id="invalidEmail" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
-          </div>
-    
-          <div class="field-form-login">
-            <label>Senha </label>
-            <input id="passwordUser" type="password" placeholder="Digite sua senha" />
-            <p id="invalidPassword" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e válido</p>
-          </div>
-    
-          <button class="button-login" type="button" onclick="buttonClick()">Entrar</button>
-          <button class="button-login" type="button" onclick="goToCadastro()">Me cadastrar</button>
-          <form method="GET" action="/personagems" id="validaLogin"></form>
-          <form method="GET" action="/cadastro" id="irCadastro"></form>
-        </div>
+            <h1 class="title-login">LOGIN</h1>
+            <div class="field-form-login">
+                <label>E-mail </label>
+                <input id="emailUser" name="emailUser" type="text" placeholder="Digite seu e-mail" />
+                <p id="invalidEmail" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e
+                    válido</p>
+            </div>
+
+            <div class="field-form-login">
+                <label>Senha </label>
+                <input id="passwordUser" type="password" placeholder="Digite sua senha" />
+                <p id="invalidPassword" style="color: red; display: none;">Campo obrigatório, com mais de 3 caracteres e
+                    válido</p>
+            </div>
+
+            <button class="button-login" type="button" onclick="buttonClick()">Entrar</button>
+            <button class="button-login" type="button" onclick="goToCadastro()">Me cadastrar</button>
+            <form method="GET" action="/personagems" id="validaLogin"></form>
+            <form method="GET" action="/cadastro" id="irCadastro"></form>
+    </div>
     </form>
 
-      <script>
-  
+    <script>
+
         validateLogin = function () {
             let formLogin = document.getElementById("validaLogin");
-            formLogin.submit(); 
+            formLogin.submit();
         }
 
         goToCadastro = function () {
@@ -118,18 +118,18 @@
             let inputPassword = document.getElementById('passwordUser');
             let invalidEmail = document.getElementById('invalidEmail');
             let invalidPassword = document.getElementById('invalidPassword');
-    
+
             if (!inputEmail.value || inputEmail.value.length < 3) {
                 inputEmail.style.border = '2px solid red';
                 invalidEmail.style.display = 'block';
-    
+
             }
             if (!inputPassword.value || inputPassword.value.length < 3) {
                 inputPassword.style.border = '2px solid red';
                 invalidPassword.style.display = 'block';
-    
+
             }
-    
+
             if (!inputEmail.value || inputEmail.value.length < 3 || !inputPassword.value || inputPassword.value.length < 3) {
                 return;
             }
@@ -139,11 +139,8 @@
             inputPassword.style.border = 'none';
             validateLogin();
         }
-  
+
     </script>
 </body>
 
 </html>
-
-
-
