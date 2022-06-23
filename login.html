@@ -96,28 +96,13 @@
           </div>
     
           <button class="button-login" onclick="buttonClick()">Entrar</button>
-          <button class="button-cadastro" onclick="goToCadastro()">Me cadastrar</button>
-          <form method="GET" action="/validate" id="validaLogin"></form>
+          <button class="button-login" onclick="goToCadastro()">Me cadastrar</button>
+          <form method="GET" action="/personagems" id="validaLogin"></form>
           <form method="GET" action="/cadastro" id="irCadastro"></form>
         </div>
       </div>
 
       <script>
-        // let xmlhttp = new XMLHttpRequest();
-  
-        // //VERIFICA SE TEM TOKEN PARA MANTER O USUÁRIO LOGADO
-        // // let token = meuStorage.getItem('token');
-        // // if (token) {
-        //     let login = document.getElementById('telaLogin');
-        //     let discord = document.getElementById('telaDiscord');
-        //     let busca = document.getElementById('telaBusca');
-  
-        //     login.style.display = 'block';
-        //     discord.style.display = 'none';
-        //     busca.style.display = 'none';
-  
-        // //}
-  
   
         validateLogin = function () {
             let formLogin = document.getElementById("validaLogin");
@@ -127,7 +112,7 @@
         goToCadastro = function () {
             document.getElementById("irCadastro").submit();
         }
-  
+
         buttonClick = function () {
             let inputEmail = document.getElementById('emailUser');
             let inputPassword = document.getElementById('passwordUser');

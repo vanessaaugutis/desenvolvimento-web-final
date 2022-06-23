@@ -36,13 +36,14 @@ app.get('/personagems', function (req, res) {
   res.render('../personagems.html');
 })
 
-app.get('/validate', function (req, res) {
-  res.render('../personagems.html');
-  // let existe = Usuario.find({email: req.body.emailLogin, senha: req.body.senhaLogin});
-  // if (existe) {
-  //   res.render('../personagems.html');
-  // }
+app.get('/showpersonagems', function (req, res) {
+  var showPersonagems = Personagem.find();
+  console.log(showPersonagems);
 })
+
+// app.get('/validate', function (req, res) {
+//   res.render('../personagems.html');
+// })
 
 //inserir dados
 app.post('/cadastro', function (req, res) {
@@ -56,24 +57,24 @@ app.post('/cadastro', function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.redirect('../login.html');
+      res.render('../login.html');
     }
   })
 })
 
 app.post('/personagems', function (req, res) {
-  var personagems = new Personagems({
+  var personagems = new Personagem({
     nome: req.body.nomePersonagem,
     forca: req.body.forcaPersonagem,
-    descricao:  req.body.descricaoPersonagem,
-    foto:  req.body.fotoPersonagem,
+    descricao: req.body.descricaoPersonagem,
+    foto: req.body.fotoPersonagem,
   })
 
   personagems.save(function (err) {
     if (err) {
       console.log(err);
     } else {
-      res.redirect('../login.html');
+      res.render('../personagems.html');
     }
   })
 })

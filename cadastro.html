@@ -17,6 +17,14 @@
           font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
       }
 
+      #telaCadastro {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+      }
+
   </style>
 </head>
 
@@ -41,8 +49,8 @@
         </div>
     
         <p id="noneAllFields" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
-        <div class="bttcad">
-          <button type="button" onclick="pegarDados()">Cadastrar</button>
+        <div class="bttcad" style="margin-top: 20px; cursor: pointer;">
+          <button type="button" onclick="pegarDados()" style="cursor: pointer;">Cadastrar</button>
         </div>
 
         
