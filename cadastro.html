@@ -6,78 +6,141 @@
   <title> WebSite - Vanessa e Thiago - Cadastro </title>
   <meta charset="utf-8">
   <style>
-      /* Estilos globais */
-      * {
-          padding: 0;
-          margin: 0;
-      }
+    /* Estilos globais */
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
-      body {
-          overflow-x: hidden;
-          font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-      }
+    body {
+      overflow-x: hidden;
+      font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
 
-      #telaCadastro {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh;
-      }
+    #telaCadastro {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
 
+    #telaCadastro {
+      width: 100vw;
+      height: 100vh;
+      background-color: #404eed;
+      color: #FFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #telaCadastro .content-cad {
+      border: 1px solid #FFF;
+      border-radius: 8px;
+      padding: 40px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #telaCadastro .title-cad {
+      margin-bottom: 15px;
+    }
+
+    #telaCadastro .field-form-cad {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #telaLogin .field-form-cad input {
+      border: none;
+      outline: none;
+      padding: 5px 20px;
+      margin-top: 5px;
+    }
+
+    #telaCadasatro .button-cad {
+      border: none;
+      font-size: 18px;
+      font-weight: 700;
+      background-color: #FFF;
+      border-radius: 12px;
+      color: #404eed;
+      margin-top: 40px;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+
+    #telaCadastro .button-cad:hover {
+      text-decoration: underline;
+    }
+
+    #telaCadastro .content-cad {
+      border: 1px solid #FFF;
+      border-radius: 8px;
+      padding: 40px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
-    <form method="POST" action="/cadastro" id="telaCadastro">
-        <h1> Cadastrar</h1>
-        <div class='nm'>
-          <label for="nome">Nome</label>
-          <input type="text" name="nome" id="nome">
-        </div>
-        <div class='snh'>
-          <label for="senha">Senha</label>
-          <input type="password" name="senha" id="senha">
-        </div>
-        <div class="confs">
-          <label for="confirmsenha">Confirmar senha</label>
-          <input type="password" name="Confirsenha" id="confirmsenha" placeholder="">
-        </div>
-        <div class="eml">
-          <label for="email">E-mail</label>
-          <input type="text" name="email" id="email" placeholder="">
-        </div>
-    
-        <p id="noneAllFields" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
-        <div class="bttcad" style="margin-top: 20px; cursor: pointer;">
-          <button type="button" onclick="pegarDados()" style="cursor: pointer;">Cadastrar</button>
-        </div>
+  <form method="POST" action="/cadastro" id="telaCadastro" id="content-cad">
+    <h1 class="title-cad"> Cadastrar</h1>
+    <div class="field-form-cad">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome">
+    </div>
+    <div class="field-form-cad">
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha">
+    </div>
+    <div class="field-form-cad">
+      <label for="confirmsenha">Confirmar senha</label>
+      <input type="password" name="Confirsenha" id="confirmsenha" placeholder="">
+    </div>
+    <div class="field-form-cad">
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" placeholder="">
+    </div>
 
-        
-      </form>
-      <script>
+    <p id="noneAllFields" style="color: red; display: none;">PREENCHA TODOS OS CAMPOS</p>
+    <div class="button-cad"
+      style="border: none;font-size: 18px;font-weight: 700;background-color: #FFF;
+    border-radius: 12px;color: #404eed;margin-top: 40px;padding: 5px 20px;cursor: pointer;text-decoration: underline; border:none">
+      <button type="button-cad" onclick="pegarDados()" style="cursor: pointer;">Cadastrar</button>
+    </div>
 
-        pegarDados = function () {
-            let Nome = document.getElementById('nome');
-            let Senha = document.getElementById('senha');
-            let ConfirSenha = document.getElementById('confirmsenha');
-            let Email = document.getElementById('email');
-            let noneAllFields = document.getElementById('noneAllFields');
-    
-            if(!Nome.value || !Senha.value || !ConfirSenha.value || !Email.value) {
-                noneAllFields.style.display = 'block';
-                return;
-            } else {
-                noneAllFields.style.display = 'none';
-            }
 
-            let telaCadastro = document.getElementById('telaCadastro');
-            telaCadastro.submit(); 
+  </form>
+  <script>
+
+    pegarDados = function () {
+      let Nome = document.getElementById('nome');
+      let Senha = document.getElementById('senha');
+      let ConfirSenha = document.getElementById('confirmsenha');
+      let Email = document.getElementById('email');
+      let noneAllFields = document.getElementById('noneAllFields');
+
+      if (!Nome.value || !Senha.value || !ConfirSenha.value || !Email.value) {
+        noneAllFields.style.display = 'block';
+        return;
+      } else {
+        noneAllFields.style.display = 'none';
+      }
+
+      let telaCadastro = document.getElementById('telaCadastro');
+      telaCadastro.submit();
     }
-  
-    </script>
+
+  </script>
 </body>
 
 </html>
-
-
